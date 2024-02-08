@@ -59,18 +59,18 @@ def handle_message(event):
         msg = event.message.text
         r = '我看不懂你說甚麼'
         
-        if '給我貼圖'in msg:
-            sticker_message = StickerSendMessage(
-                package_id='1', 
-                sticker_id='3'
-            )
-        	line_bot_api.reply_message_with_http_info(
-            ReplyMessageRequest(
-                reply_token=event.reply_token,
-                messages=[sticker_message]
-                ))
+        # if '給我貼圖' in msg:
+        #     sticker_message = StickerSendMessage(
+        #         package_id='1', 
+        #         sticker_id='3'
+        #     )
+        # 	line_bot_api.reply_message_with_http_info(
+        #     ReplyMessageRequest(
+        #         reply_token=event.reply_token,
+        #         messages=[sticker_message]
+        #         ))
 
-        	return
+        # 	return
 
         if msg in ['hi', 'Hi']:
             r = 'hi'
@@ -80,6 +80,8 @@ def handle_message(event):
             r = '我是機器人'
         elif '訂位' in msg:
             r = '您想訂位是嗎'
+        elif '幹' in msg:
+        	r = '幹你娘'
 
         line_bot_api = MessagingApi(api_client)
         line_bot_api.reply_message_with_http_info(
