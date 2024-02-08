@@ -77,10 +77,15 @@ def handle_message(event):
         
             )
         )
+{
+  "type": "audio",
+  "originalContentUrl": "https://www.youtube.com/watch?v=qjlVAsvQLM8",
+  "duration": 60000
+}
+
 
 if __name__ == "__main__":  # 確保
     app.run()
-
 
 
         # if '給我貼圖' in msg:
