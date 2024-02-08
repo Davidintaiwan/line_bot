@@ -69,8 +69,10 @@ def handle_message(event):
         elif '幹' in msg:
             r = '幹你娘'
         elif 'tell me why' in msg:
-            r = 'https://www.youtube.com/watch?v=qjlVAsvQLM8'     
-            
+            r = 'https://www.youtube.com/watch?v=qjlVAsvQLM8'
+        elif ['不是因為天氣晴朗才愛你','理想混蛋' ] in msg:
+        	r = 'https://www.youtube.com/watch?v=9_068Ekk_fs'     
+
         line_bot_api = MessagingApi(api_client)
         line_bot_api.reply_message_with_http_info(
             ReplyMessageRequest(
