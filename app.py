@@ -61,8 +61,8 @@ def handle_message(event):
         
         if '給我貼圖'in msg:
             sticker_message = StickerSendMessage(
-                package_id='3', 
-                sticker_id='23'
+                package_id='1', 
+                sticker_id='3'
             )
         line_bot_api.reply_message_with_http_info(
             ReplyMessageRequest(
