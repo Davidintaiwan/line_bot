@@ -67,7 +67,23 @@ def handle_message(event):
         elif '訂位' in msg:
             r = '您想訂位是嗎'
         elif '幹' in msg:
-        	r = '幹你娘'
+            r = '幹你娘'
+        elif 'tell me why' in msg:
+            audio_response = {
+                "type": "audio",
+                "originalContentUrl": "https://www.youtube.com/watch?v=qjlVAsvQLM8",
+                "duration": 60000
+            }
+
+            line_bot_api = MessagingApi(api_client)
+            line_bot_api.reply_message_with_http_info(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[audio_response]
+                )
+            )
+            return
+
 
         line_bot_api = MessagingApi(api_client)
         line_bot_api.reply_message_with_http_info(
@@ -77,11 +93,6 @@ def handle_message(event):
         
             )
         )
-{
-  "type": "audio",
-  "originalContentUrl": "https://www.youtube.com/watch?v=qjlVAsvQLM8",
-  "duration": 60000
-}
 
 
 if __name__ == "__main__":  # 確保
@@ -93,11 +104,11 @@ if __name__ == "__main__":  # 確保
         #         package_id='1', 
         #         sticker_id='3'
         #     )
-        # 	line_bot_api.reply_message_with_http_info(
+        #     line_bot_api.reply_message_with_http_info(
         #     ReplyMessageRequest(
         #         reply_token=event.reply_token,
         #         messages=[sticker_message]
         #         ))
 
-        # 	return
+        #     return
 
