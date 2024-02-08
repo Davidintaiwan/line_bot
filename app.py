@@ -64,13 +64,13 @@ def handle_message(event):
                 package_id='1', 
                 sticker_id='3'
             )
-        line_bot_api.reply_message_with_http_info(
+        	line_bot_api.reply_message_with_http_info(
             ReplyMessageRequest(
                 reply_token=event.reply_token,
                 messages=[sticker_message]
                 ))
 
-        return
+        	return
 
         if msg in ['hi', 'Hi']:
             r = 'hi'
