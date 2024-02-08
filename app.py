@@ -18,8 +18,7 @@ from linebot.v3.messaging import (
     ApiClient,
     MessagingApi,
     ReplyMessageRequest,
-    TextMessage, 
-    StickerSendMessage
+    TextMessage
 )
 from linebot.v3.webhooks import (
     MessageEvent,
@@ -59,19 +58,6 @@ def handle_message(event):
         msg = event.message.text
         r = '我看不懂你說甚麼'
         
-        # if '給我貼圖' in msg:
-        #     sticker_message = StickerSendMessage(
-        #         package_id='1', 
-        #         sticker_id='3'
-        #     )
-        # 	line_bot_api.reply_message_with_http_info(
-        #     ReplyMessageRequest(
-        #         reply_token=event.reply_token,
-        #         messages=[sticker_message]
-        #         ))
-
-        # 	return
-
         if msg in ['hi', 'Hi']:
             r = 'hi'
         elif msg == '你吃飯了嗎':
@@ -96,4 +82,17 @@ if __name__ == "__main__":  # 確保
     app.run()
 
 
+
+        # if '給我貼圖' in msg:
+        #     sticker_message = StickerSendMessage(
+        #         package_id='1', 
+        #         sticker_id='3'
+        #     )
+        # 	line_bot_api.reply_message_with_http_info(
+        #     ReplyMessageRequest(
+        #         reply_token=event.reply_token,
+        #         messages=[sticker_message]
+        #         ))
+
+        # 	return
 
