@@ -1,0 +1,4 @@
+# 告訴營運者要用甚麼套件
+line-bot-sdk
+gunicorn
+flask
