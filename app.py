@@ -70,7 +70,8 @@ def handle_message(event):
                 messages=[sticker_message]
                 ))
 
-        
+        return
+
         if msg in ['hi', 'Hi']:
             r = 'hi'
         elif msg == '你吃飯了嗎':
